@@ -1,0 +1,50 @@
+<!-- name_form.html -->
+    <form id="name-form">
+        <div class="form-group">
+            <label for="name">Enter your name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="difficulty">Select difficulty:</label>
+            <select class="form-control" id="difficulty" name="difficulty">
+                <!-- <option value="easy">Easy</option> -->
+                <option value="impossible">Impossible</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Start Game</button>
+    </form>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#name-form').submit(function(event) {
+                event.preventDefault();
+                var playerName = $('#name').val();
+                var difficulty = $('#difficulty').val(); // Get selected difficulty
+                startGame(playerName, difficulty); // Pass both player name and difficulty to startGame function
+            });
+        });
+
+        function startGame(playerName, difficulty) {
+            $.ajax({
+                type: 'POST',
+                url: '/move',
+                contentType: 'application/json',
+                data: JSON.stringify({ player: playerName, difficulty: difficulty }), // Send difficulty along with player name
+                success: function(response) {
+                    // Hide the name form
+                    $('#name-form').hide();
+                    // Show the game container
+                    $('#game-container').show();
+                    // Update player's name in scoreboard
+                    angular.element(document.getElementById('game-container')).scope().player_name = playerName;
+                },
+                error: function(xhr, status, error) {
+                    // Handle errors if needed
+                }
+            });
+        }
+    </script>
+</body>
+</html>
