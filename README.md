@@ -22,7 +22,7 @@ git clone https://github.com/ermallimaj/tictactoe-minimax-python.git
 2. Navigate to the project directory:
 
 ```bash
-cd TicTacToe-Beetroot
+cd tictactoe-minimax-python
 ```
 
 3. Create a virtual environment:
