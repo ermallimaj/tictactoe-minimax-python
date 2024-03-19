@@ -1,6 +1,7 @@
 # TicTacToe-Beetroot
 
-This project is a Tic Tac Toe web application developed using Flask, AngularJS, HTML, CSS, and JavaScript.
+This project is a Tic-Tac-Toe web application (player vs AI) developed using Flask, AngularJS, HTML, CSS, and JavaScript.
+You can play our game online on [http://ermallee.pythonanywhere.com/](http://ermallee.pythonanywhere.com/)
 
 ## Getting Started
 
@@ -60,6 +61,6 @@ This will start the Flask server, and you can access the Tic Tac Toe game in you
 4. Follow the on-screen instructions to make your moves and compete against the computer.
 5. Enjoy the game!
 
-## License
 
-Contributors: Ermal Limaj, Arta Zymeri
+Contributors: 
+Ermal Limaj, Arta Zymeri
